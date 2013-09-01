@@ -1,0 +1,38 @@
+<section class="profile">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>My Profile</h2>
+    <a class="back" href="#/dashboard">Back</a>
+  </div>
+  <div class="content">
+    <div class="intro">
+      <h3>{{profile.full_name}}</h3>
+      <img ng-src="{{profile.avatar_url}}" alt="avatar"/>
+    </div>
+    <div class="detailed">
+      <table>
+        <tbody>
+          <tr>
+            <th>Username:</th>
+            <td>{{profile.username}}</td>
+          </tr>
+          <tr>
+            <th>Roles:</th>
+            <td>{{profile.roles | userRoles}}</td>
+          </tr>
+          <tr>
+            <th>Location:</th>
+            <td>{{profile.location}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="description">
+      <h3>Description</h3>
+      <p>{{profile.description}}</p>
+    </div>
+    <div class="actions">
+      <a href="#/profile/edit">Edit</a>
+    </div>
+  </div>
+</section>

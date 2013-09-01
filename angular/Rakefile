@@ -1,0 +1,20 @@
+INPUT_JS_FILES = FileList['app/js/*.js']
+OUTPUT_JS_FILES = INPUT_JS_FILES.pathmap('public/js/%f')
+
+directory 'public/js'
+
+OUTPUT_JS_FILES.zip(INPUT_JS_FILES).each do |target, source|
+  file target => [source, 'public/js'] do
+    sh "cp #{source} #{target}"
+  end
+end
+
+directory 'public/stylesheets'
+
+OUTPUT_CSS_FILE = 'public/stylesheets/styles.css'
+
+file OUTPUT_CSS_FILE => ['app/styles/styles.styl', 'public/stylesheets'] do
+  sh "stylus < app/styles/styles.styl > public/stylesheets/styles.css"
+end
+
+task :default => OUTPUT_JS_FILES + [OUTPUT_CSS_FILE]

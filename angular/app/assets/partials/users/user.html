@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="intro person">
+    <h3>{{user.full_name}}</h3>
+    <img ng-src="{{user.avatar_url}}" alt="avatar"/>
+    <div class="online" ng-show="user.online">Online</div>
+    <div class="offline" ng-hide="user.online">Offline</div>
+  </div>
+  <div class="detailed">
+    <table>
+      <tbody>
+        <tr>
+          <th>Username:</th>
+          <td>{{user.username}}</td>
+        </tr>
+        <tr>
+          <th>Roles:</th>
+          <td>{{user.roles | userRoles}}</td>
+        </tr>
+        <tr>
+          <th>Location:</th>
+          <td>{{user.location}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="description">
+    <h3>Description</h3>
+    <p>{{user.description}}</p>
+  </div>
+  <div class="actions">
+    <a class="add-to-network" ng-hide="user.in_contacts" ng-click="addToNetwork(user)">Add to Network</a>
+    <a class="remove-from-network" ng-show="user.in_contacts" ng-click="removeFromNetwork(user)">Remove from network</a>
+    <a class="cheer-up" ng-show="user.in_contacts" href="#/cheer_up">Cheer up</a>
+  </div>
+</div>

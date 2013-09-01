@@ -1,0 +1,16 @@
+<section class="my-network">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Find People</h2>
+    <a class="back" href="#/contacts">Back</a>
+  </div>
+  <ul class="people">
+    <li ng-repeat="user in users">
+      <a href="#/users/{{user.id}}">
+        <h3>{{user.full_name}}</h3>
+        <img ng-src="{{user.avatar_url}}"/>
+        <div ng-show="user.in_contacts" class="in-network">In Network</div>
+      </a>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="AppCtrl">
+<head>
+  <meta charset="utf-8">
+  <title>MoodKick MMA v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="stylesheets/app.css"/>
+</head>
+<body>
+  <div ng-view></div>
+  <script src="javascripts/vendor.js"></script>
+  <script src="javascripts/app.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      new FastClick(document.body);
+    }, false);
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+*~
+.DS_Store
+android/bin
+iOS/MoodKick.xcodeproj/project.xcworkspace/xcuserdata/*
+iOS/www/images/
+iOS/www/javascripts/
+iOS/www/partials/
+iOS/www/stylesheets/

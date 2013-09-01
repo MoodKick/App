@@ -1,0 +1,858 @@
+@import 'nib'
+
+$font-size = 12px
+$angry-color = #D9368a
+$calm-color = #00A4CE
+$manic-color = #EB902b
+$anxious-color = #8E499B
+$self-help-color = #2BB673
+$safety-plan-color = #EAD23A
+$box-background-color = #FFF
+$almost-black-color = #303030
+$almost-white-color = #EEE
+$small-box-size = 145px
+$two-column-box-size = $small-box-size
+$three-column-box-size = 94px
+$teal-color = #60C3AD
+$daily-journal-color = #60C3AD
+$max-width = 302px
+$navigation-height = 60px
+
+global-reset()
+reset-html5()
+
+element-header()
+  color $almost-black-color
+  font-size 117%
+  font-weight bold
+  padding 0
+
+wide-box()
+  text-align left
+  margin-bottom 10px
+  font-size $font-size
+  line-height 1
+  background $box-background-color
+  padding 10px
+  position relative
+
+hide-text()
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+
+image-replace(image, x=50%, y=50%)
+  hide-text()
+  background-image image
+  background-repeat no-repeat
+  background-position x y
+  background-size contain
+
+
+button()
+  color white
+  background-color $anxious-color
+  text-decoration none
+  display inline-block
+  padding 10px 25px
+  margin 0 0 10px 10px
+
+expose-box(color)
+
+tile-background()
+  background-color $box-background-color
+  background-image url('../images/texture-grey.png')
+
+grid()
+  vertical-align top
+  line-height 0
+  max-width $small-box-size*2 + 20px
+  text-align left
+  font-size 0
+  margin-right -10px
+
+  > li.add-new
+    background none
+    box-shadow none
+
+    a
+      padding 0
+      width $small-box-size
+      height $small-box-size
+      content url('../images/add-new.png')
+
+  > li
+    position relative
+    display inline-block
+    vertical-align top
+    expose-box($box-background-color)
+    font-size $font-size
+    line-height 1
+
+    a
+      display inline-block
+      padding 10px
+      width $small-box-size - 20px
+      height $small-box-size - 20px
+      text-align left
+      text-decoration none
+
+      h3
+        element-header()
+
+three-columns-grid()
+  grid()
+
+  > li:nth-child(3n+1)
+    margin 0 10px 10px 0
+  > li:nth-child(3n+2)
+    margin 0 10px 10px 0
+  > li:nth-child(3n)
+    margin 0
+
+  > li
+    height $three-column-box-size
+    width $three-column-box-size
+
+two-columns-grid()
+  grid()
+
+  > li:nth-child(2n+1)
+    margin 0 10px 10px 0
+
+  > li:nth-child(2n)
+    margin 0
+
+  > li
+    height $small-box-size
+
+*, ::after, ::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body
+  background-image url("../images/bg.jpg")
+  background-repeat repeat
+  background-attachment fixed
+  background-position center
+  background-color #444
+  font-family 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif
+  min-height 480px
+
+body.has-navigation
+  padding-bottom $navigation-height
+
+nav
+  position fixed
+  left 0
+  right 0
+  bottom 0
+  z-index 1000
+
+  background linear-gradient(top, #F0F0F0, #D3D3D3)
+
+  ul li:first-child
+    padding-left 0
+  ul li:last-child
+    padding-right 0
+
+  ul
+    clearfix()
+    //background $almost-white-color
+    max-width $small-box-size*2 + 10px
+    margin auto
+
+    li
+      height $navigation-height
+      float left
+      padding 12px 5px
+      width 50px
+    li
+      a
+        max-width 40px
+
+    li.daily-journal a
+      content url('../images/daily-journal-small.png')
+    li.mood-trends a
+      content url('../images/mood-trends-small.png')
+    li.cheers a
+      content url('../images/cheers-small.png')
+    li.meditational-resources a
+      content url('../images/meditational-resources-small.png')
+    li.my-network.active a
+      content url('../images/my-network-small-active.png')
+    li.my-profile a
+      content url('../images/my-profile-small.png')
+    li.my-network a
+      content url('../images/my-network-small.png')
+
+section, section *
+  box-sizing content-box
+  -webkit-box-sizing content-box
+
+section
+  max-width $small-box-size*2 + 10px
+  margin auto
+  padding 0 8px
+
+  .page-title
+    position relative
+    padding-top 20px
+    margin-bottom 0
+    padding-bottom 20px
+
+    a
+      position absolute
+      right 0
+      top 20px
+
+    a.back
+      max-width 43px
+      content url('../images/back.png')
+
+    h1
+      max-width 180px
+      content url('../images/logo.png')
+      text-align center
+
+    h2
+      color white
+      font-weight normal
+      margin-top 5px
+      font-size 18px
+
+  .content
+    margin-bottom 10px
+
+  .person, .people
+    .online, .offline
+      max-width 15px
+      position absolute
+      right 10px
+      top 10px
+      background-size 15px
+
+    .online
+      content url('../images/online.png')
+    .offline
+      content url('../images/offline.png')
+
+  .actions
+    text-align right
+    padding-top 0
+    clearfix()
+
+    a:first-child
+      margin-left 0
+      float left
+    a:last-child
+      margin-right 0
+      float right
+
+    a
+      button()
+      margin 10px 0
+
+    a.cancel
+      background-color $angry-color
+      float left
+      margin-left 0
+
+  h3
+    padding-bottom 20px
+    color $almost-white-color
+
+.slider-labels
+  clearfix()
+  color $almost-white-color
+
+  .min-value
+    float left
+
+  .max-value
+    float right
+
+section.self-help
+  ul.content-objects
+    two-columns-grid()
+
+    > li
+      tile-background()
+
+section.chest-of-hope
+  .hope-items
+    three-columns-grid()
+
+    > li
+
+      .item
+        width $three-column-box-size
+        height $three-column-box-size
+        border none
+        background-color red
+        border 1px solid $almost-white-color
+        z-index 10
+
+      .ui-draggable-dragging
+        z-index 11
+
+    .slot-active
+      background-image url('../images/texture-grey.png')
+      background-color $almost-black-color
+
+section.questionnaire
+  h3
+    font-size 20px
+    color $almost-white-color
+
+section.mood-trend
+
+  .part
+    padding-bottom 20px
+
+  .good-and-bad
+    table
+      background-color $almost-white-color
+      width 100%
+      th, td
+        padding 4px 10px 4px 5px
+        color $almost-black-color
+        font-size 16px
+
+      th
+        font-weight bold
+      td
+        font-weight normal
+
+  .marked-with
+    > div
+      display inline-block
+      width 62px
+      height 62px
+      margin-right 5px
+      padding 4px
+      position relative
+      position relative
+      vertical-align top
+      text-align center
+
+      h4
+        color white
+        font-size 12px
+        position absolute
+
+      span
+        line-height 62px
+        font-size 24px
+        color white
+        font-weight bold
+
+    .calmness
+      background-color $calm-color
+    .anger
+      background-color $angry-color
+    .anxiety
+      background-color $anxious-color
+    .mania
+      background-color $manic-color
+
+section.chat
+  .page-title
+
+    .online, .offline
+      position absolute
+      right 0
+      bottom 20px
+      padding-left 20px
+      background-repeat no-repeat
+      background-position left center
+      color $almost-white-color
+
+    .online
+      background-image url('../images/online.png')
+    .offline
+      background-image url('../images/offline.png')
+
+section.signup
+  .actions
+    a
+      background-color $daily-journal-color
+
+section.login
+  .actions
+    a
+      background-color $daily-journal-color
+
+    a.new-user, a.config
+      width $small-box-size - 55px
+      text-align center
+
+section.meditational-resources
+  > ul
+    > li
+      wide-box()
+
+      h3
+        element-header()
+
+      p
+        margin 10px 0
+
+      .duration
+        position absolute
+        right 10px
+        top 10px
+
+      .actions
+        a
+          margin-bottom 0
+
+  .toolbar-actions
+    text-align right
+    padding-top 0
+    margin-bottom 10px
+
+    a
+      button()
+      width $small-box-size - 50px
+      display inline-block
+      background-color transparent
+      background-image url('../images/button-opague.png')
+      margin-bottom 0
+
+    a.selected
+      background-image none
+      background-color $teal-color
+
+    a.audio-resources
+      margin-left 0
+      float left
+
+  .content
+      wide-box()
+      background-color white
+
+section.my-network, section.users
+  ul.people
+    two-columns-grid()
+
+    > li
+      tile-background()
+
+      a
+        img
+          position absolute
+          left 50%
+          top 50%
+          width 80px
+          height 80px
+          margin-left -40px
+          margin-top -40px
+
+        .in-network
+          position absolute
+          bottom 10px
+          left 10px
+          background-image url('../images/favourited_icon.png')
+          background-position left center
+          background-repeat no-repeat
+          padding-left 20px
+          text-decoration none
+          color $almost-black-color
+
+section.cheers
+  .content
+    .cheer
+      clearfix()
+      wide-box()
+      background-image url('../images/texture-grey.png')
+      position relative
+      min-height 86px
+
+      h3
+        padding-bottom 10px
+        font-size 16px
+        font-weight bold
+        display inline-block
+        color $almost-black-color
+
+      .sent
+        font-size 11px
+        font-weight regular
+        color gray
+
+      .avatar
+        width 60px
+        position absolute
+        left 0
+        top 36px
+        left 10px
+
+      p
+        margin 0px 0px 10px 70px
+
+      .subcheer
+        padding 6px 0px
+        border-top solid 1px lightgray
+        position relative
+        min-height 30px
+
+        .who-when
+          margin-left 40px
+
+        .avatar
+          width 30px
+          left 0
+          top 6px
+
+        p
+          margin 0px 0px 0px 40px
+
+
+section.profile-edit
+  .content
+
+    .choose-avatar
+      wide-box()
+
+      img
+        vertical-align middle
+        max-width 100px
+      a
+        button()
+
+section.learn
+  ul.brochures
+    wide-box()
+
+    li:nth-child(1)
+      border-bottom 0
+
+    li
+      border 1px solid black
+
+      a
+        display block
+        padding 10px 25px
+
+section.rich-text
+  .content
+    .body
+      wide-box()
+      line-height 18px
+
+      h1
+        font-size: 30px;
+        line-height: 36px;
+        margin: 0;
+        font-weight: bold;
+
+      h2
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: bold;
+        margin: 0;
+
+      b
+        font-weight bold
+
+      i
+        font-style italic
+
+      u
+        text-decoration underline
+
+      ul, ol
+        padding 0
+        margin 0 0 9px 25px
+
+      ul
+        li
+          list-style disc
+
+      ol
+        li
+          list-style decimal
+
+      .wysiwyg-color-red
+        color red
+      .wysiwyg-color-blue
+        color blue
+      .wysiwyg-color-green
+        color green
+
+
+section.profile
+  .content
+
+    .intro, .detailed, .description
+      wide-box()
+
+      h3
+        padding-bottom 10px
+        font-size 16px
+        font-weight bold
+        color $almost-black-color
+
+    .intro
+      .online, .offline
+        position absolute
+        right 10px
+        top 10px
+        padding-left 20px
+
+    .detailed
+      table
+        width auto
+
+        th
+          font-weight bold
+
+        td, th
+          padding 4px 10px 4px 5px
+
+section.choose-avatar-new
+  ul.avatars
+    two-columns-grid()
+
+    li a
+      padding 0
+      width $small-box-size
+      height $small-box-size
+
+      img
+        width $small-box-size
+        height $small-box-size
+
+section.choose-avatar
+  ul.two-columns-grid
+    text-align left
+
+    li a
+      background-repeat no-repeat
+      background-position center center
+    li a *
+      display none
+
+section.daily-journal
+  ul.journal-entries
+    two-columns-grid()
+
+    > li
+      tile-background()
+
+    ul.keywords
+      position absolute
+      bottom 10px
+
+      li
+        display inline
+        font-size 80%
+        text-transform capitalize
+
+      li:after {
+        content ", "
+      }
+
+      li:last-child:after {
+        content ""
+      }
+
+      li.angry
+        color $angry-color
+      li.calm
+        color $calm-color
+      li.manic
+        color $manic-color
+      li.anxious
+        color $anxious-color
+
+    > li a
+      background-repeat no-repeat
+      background-position center
+      background-size 80px
+
+    > li.content a
+      background-image url('../images/smiley-content.png')
+
+    > li.sad a
+      background-image url('../images/smiley-sad.png')
+
+    > li.very-sad a
+      background-image url('../images/smiley-very-sad.png')
+
+    > li.happy a
+      background-image url('../images/smiley-happy.png')
+
+    > li.very-happy a
+      background-image url('../images/smiley-very-happy.png')
+
+
+section.dashboard
+
+  .alert
+    a.log-out-yes
+      background-color $angry-color
+    a.log-out-o
+      background-color $anxious-color
+
+  .page-title a.log-out
+    max-width 48px
+    content url('../images/log-out.png')
+
+  ul.dashboard-items
+    two-columns-grid()
+    > li
+      expose-box($daily-journal-color)
+
+      a
+        text-align center
+        color $almost-black-color
+        font-size 18px
+        padding 0
+        width $small-box-size
+        height $small-box-size
+
+    li.daily-journal
+      a
+        image-replace(url('../images/tiles/tile-daily-journal.jpg'))
+
+
+    li.mood-trends
+      a
+        image-replace(url('../images/tiles/tile-mood-trends.jpg'))
+
+    li.cheers
+      a
+        image-replace(url('../images/tiles/tile-cheers.jpg'))
+
+    li.meditational-resources
+      a
+        image-replace(url('../images/tiles/tile-meditational-resources.jpg'))
+
+    li.my-profile
+      a
+        image-replace(url('../images/tiles/tile-my-profile.jpg'))
+
+    li.my-network
+      a
+        image-replace(url('../images/tiles/tile-my-network.jpg'))
+
+    li.self-help
+      a
+        image-replace(url('../images/tiles/tile-self-help.jpg'))
+
+    li.safety-plan
+      a
+        image-replace(url('../images/tiles/tile-safety-plan.jpg'))
+
+    li.learn
+      a
+        image-replace(url('../images/tiles/tile-learn.jpg'))
+
+    li.help
+      a
+        image-replace(url('../images/tiles/tile-help.jpg'))
+
+    li.questionnaire
+      a
+        image-replace(url('../images/tiles/tile-questionnaire.jpg'))
+
+    li.chest-of-hope
+      a
+        image-replace(url('../images/tiles/tile-chest-of-hope.jpg'))
+
+section
+  form
+    .help-block
+      color $almost-white-color
+
+    label
+      color $almost-white-color
+
+    input[type="text"], input[type="email"], input[type="password"], textarea
+      width 100%
+      box-sizing border-box
+      padding 6px 8px 6px
+      line-height 1.4em
+      font-size 15px
+      display block
+      height inherit
+
+.errorfield
+  background-color rgba(255, 0, 0, 0.2)
+  border-bottom 1px solid white
+
+  ul
+    padding 10px 0 10px 40px
+    color $almost-white-color
+
+input:invalid, textarea:invalid
+  background-color rgba(255, 0, 0, 0.2)
+
+.chat-list-container
+  max-width $small-box-size*2 + 10px
+  margin auto
+  box-sizing content-box
+  -webkit-box-sizing content-box
+
+  > div.chat-list-item
+    wide-box()
+
+.x-toolbar-dark.x-docked-bottom
+  background none
+  border none
+  border-top none
+  max-width 312px
+  margin auto
+
+  a.do-send
+    button()
+    padding 10px 25px
+    margin 0
+
+.gridster .gs_w
+  background white
+  cursor pointer
+
+.content
+  overflow hidden
+
+section.sequential-player
+  deck, slide
+    display block
+
+  deck
+    width 9999px
+    left 0
+    z-index 1
+    overflow hidden
+
+  slide
+    float left
+    width $max-width - 10px - 2px
+    padding 20px 5px
+    background white 755px 630px no-repeat
+    border 1px solid #ccc
+    -webkit-transition margin-left 0.25s
+    margin-left $max-width
+
+  slide.previous
+    margin-left - $max-width
+
+  slide.current
+    margin-left 0
+
+  .deck-control
+    a
+      font-size 40px
+    a:link,
+    a:visited,
+    a:hover,
+    a:active
+      text-decoration none
+      color white
+
+    a.next
+      float right

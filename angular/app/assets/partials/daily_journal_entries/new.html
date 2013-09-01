@@ -1,0 +1,15 @@
+<section class="daily-journal">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Journal Entry</h2>
+    <a class="back" href="#/daily_journal_entries">Back</a>
+  </div>
+  <form novalidate>
+    <ng-include src="'partials/daily_journal_entries/form.html'"></ng-include>
+    <span ng-show="keywordError">error</span>
+    <div class="actions">
+      <a class="cancel" href="#/daily_journal_entries">Cancel</a>
+      <a class="save" ng-click="add(entry)">Save</a>
+    </div>
+  </form>
+</section>

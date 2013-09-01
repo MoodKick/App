@@ -1,0 +1,20 @@
+<section class="daily-journal">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Daily Journal</h2>
+    <a class="back" href="#/dashboard">Back</a>
+  </div>
+  <ul class="journal-entries">
+    <li class="add-new">
+      <a href="#/daily_journal_entries/new">Add new</a>
+    </li>
+    <li ng-repeat="entry in entries | orderBy:orderProp" class="{{entry.mood()}}">
+      <a href="#/daily_journal_entries/{{entry.id}}">
+        <h3>{{entry.created_at | date:'d/M'}}</h3>
+        <ul class="keywords">
+          <li ng-repeat="keyword in entry.keywords()" class="{{keyword}}">{{keyword}}</li>
+        </ul>
+      </a>
+    </li>
+  </ul>
+</section>

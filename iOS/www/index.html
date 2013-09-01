@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="AppCtrl">
+<head>
+  <meta charset="utf-8">
+  <title>MoodKick App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="stylesheets/app.css"/>
+  <!-- loading phonegap, must be the first js to be loaded -->
+  <script src="cordova-2.0.0.js"></script>
+  <!-- loading phonegap plugins -->
+  <script src="platform/PushNotification.js"></script>
+</head>
+<body>
+  <div ng-view></div>
+  <script src="javascripts/vendor.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>
+

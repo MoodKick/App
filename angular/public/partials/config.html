@@ -1,0 +1,23 @@
+<section class="config">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Configuration</h2>
+    <a class="back" href="#/login">Back</a>
+  </div>
+  <div class="content">
+    <form>
+      <fieldset>
+        <div class="control-group">
+          <label class="control-label">Api Endpoint</label>
+          <div class="controls">
+            <input type="text" ng-model="configs.api_endpoint"/>
+            <p class="help-block">Example: "http://dev.moodkick.com/api/v1/"</p>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <div class="actions">
+      <a class="save" ng-click="update(configs)">Save</a>
+    </div>
+  </div>
+</section>

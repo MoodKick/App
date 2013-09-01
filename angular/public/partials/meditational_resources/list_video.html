@@ -1,0 +1,21 @@
+<section class="meditational-resources">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Meditational</h2>
+    <a class="back" href="#dashboard">Back</a>
+  </div>
+  <div class="toolbar-actions">
+    <a class="audio-resources" href="#/meditational_resources/audio">Audio Resources</a>
+    <a class="selected video-resources" href="#">Video Resources</a>
+  </div>
+  <ul>
+    <li ng-repeat="resource in videoResources">
+      <h3>{{resource.title}}</h3>
+      <div class="duration">{{resources.duration}}</div>
+      <p>{{resource.description}}</p>
+      <div class="actions">
+        <a href="http://www.youtube.com/watch?v={{resource.url}}">Play</a>
+      </div>
+    </li>
+  </ul>
+</section>

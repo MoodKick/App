@@ -1,0 +1,26 @@
+<section class="meditational-resources">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Meditational</h2>
+    <a class="back" href="#/dashboard">Back</a>
+  </div>
+  <div class="toolbar-actions">
+    <a class="selected audio-resources" href="#">Audio Resources</a>
+    <a class="video-resources" href="#/meditational_resources/video">Video Resources</a>
+  </div>
+  <ul>
+    <li ng-repeat="resource in audioResources">
+      <h3>{{resource.title}}</h3>
+      <div class="duration">{{resource.duration}}</div>
+      <p>{{resource.description}}</p>
+      <div class="actions">
+        <a mk-play-audio href="#play">Play</a>
+        <a mk-stop-audio href="#stop">Stop</a>
+        <audio id="audio{{resource.id}}">
+          <source src="{{resource.url}}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </li>
+  </ul>
+</section>

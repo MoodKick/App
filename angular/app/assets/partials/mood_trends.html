@@ -1,0 +1,43 @@
+<section class="mood-trend">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Mood Trends</h2>
+    <a class="back" href="#/dashboard">Back</a>
+  </div>
+  <h3>Happiness through the last 30 days</h3>
+  <div class="part">
+    <mk-trend source="report.happiness_levels"></mk-trend>
+  </div>
+</section>
+<section class="mood-trend">
+  <h3>Days marked with...</h3>
+  <div class="part marked-with">
+    <div class="calmness">
+      <h4>Calmness</h4>
+      <span>{{report.marked_with_calmness}}</span>
+    </div><div class="anger">
+      <h4>Anger</h4>
+      <span>{{report.marked_with_anger}}</span>
+    </div><div class="anxiety">
+      <h4>Anxiety</h4>
+      <span>{{report.marked_with_anxiety}}</span>
+    </div><div class="mania">
+      <h4>Mania</h4>
+      <span>{{report.marked_with_mania}}</span>
+    </div>
+  </div>
+
+  <h3>Good and Bad</h3>
+  <div class="part good-and-bad">
+    <table>
+      <tr>
+        <th>Best Day</th>
+        <td>{{report.best_day | date:'longDate'}}</td>
+      </tr>
+      <tr>
+        <th>Worst Day</th>
+        <td>{{report.worst_day | date:'longDate'}}</td>
+      </tr>
+    </table>
+  </div>
+</section>

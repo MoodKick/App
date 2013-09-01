@@ -1,0 +1,76 @@
+<section class="profile-edit" ng-show="state=='form'">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>My Profile</h2>
+    <a class="back" href="#/profile">Back</a>
+  </div>
+  <div class="content">
+    <div class="choose-avatar">
+      <img ng-src="{{profile.avatar_url}}" alt="avatar"/>
+      <a ng-click="chooseAvatar()">Choose Avatar</a>
+    </div>
+  </div>
+  <form>
+    <fieldset>
+      <div class="control-group">
+        <label class="control-label">Full name</label>
+        <div class="controls">
+          <input type="text" ng-model="profile.full_name"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Email</label>
+        <div class="controls">
+          <input type="email" ng-model="profile.email"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Password</label>
+        <div class="controls">
+          <input type="password" ng-model="profile.password"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Password Confirmation</label>
+        <div class="controls">
+          <input type="password" ng-model="profile.password_confirmation"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Location</label>
+        <div class="controls">
+          <select ng-model="profile.location">
+            <option>Hovedstaden</option>
+            <option>Sjælland</option>
+            <option>Syddanmark</option>
+            <option>Midtjylland</option>
+            <option>Nordjylland</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Description</label>
+        <div class="controls">
+          <textarea class="input-xlarge" rows="3" ng-model="profile.description"></textarea>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <div class="actions">
+    <a class="cancel" href="#/profile">Cancel</a>
+    <a class="save" ng-click="update(profile)">Save</a>
+  </div>
+</section>
+
+<section class="choose-avatar-new" ng-show="state=='avatar'">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Select avatar</h2>
+    <a class="back" ng-click="showForm()">Back</a>
+  </div>
+  <ul class="avatars">
+    <li ng-repeat="avatar in avatars">
+      <a ng-click="avatarChoosen(avatar)"><img ng-src="{{avatar.url}}"/></a>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,22 @@
+<section class="questionnaire">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Questionnaire</h2>
+    <a class="back" href="#/dashboard">Back</a>
+  </div>
+  <div class="content">
+    <h3>Depression test</h3>
+    <div class="alert alert-success" ng-show="notice">
+      {{notice}}
+    </div>
+    <form novalidate>
+      <fieldset>
+        <questionnaire data="depressionTest"></questionnaire>
+      </fieldset>
+      <div class="actions">
+        <a class="cancel" href="#/dashboard">Cancel</a>
+        <a class="save" ng-show="canSave" ng-click="add(depressionTest)">Save</a>
+      </div>
+    </form>
+  </div>
+</section>

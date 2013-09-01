@@ -1,0 +1,22 @@
+<section class="content-object sequential-player">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Self-help</h2>
+    <a class="back" href="#content_objects">Back</a>
+  </div>
+  <div class="content" ng-show="contentObject.type == 'sequential'">
+    <div class="deck-control">
+      <a class="previous" ng-show="!isFirst()" ng-click="previous()">←</a>
+      <a class="next" ng-show="!isLast()" ng-click="next()">→</a>
+    </div>
+    <deck current="activeSlide" slides="slides"></deck>
+  </div>
+  <div class="content" ng-show="contentObject.type == 'timeline'">
+    <div class="intro">
+      <div id="player"></div>
+      <div id="content" style="background-color: white"></div>
+      <div id="media"></div>
+      <a ng-click="start(contentObject)">Start</a>
+    </div>
+  </div>
+</section>

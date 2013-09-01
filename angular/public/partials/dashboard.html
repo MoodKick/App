@@ -1,0 +1,28 @@
+<section class="dashboard">
+  <div class="page-title">
+    <h1>MoodKick</h1>
+    <h2>Dashboard</h2>
+    <a class="log-out" ng-click="confirmLogOut()">log out</a>
+  </div>
+  <div class="alert alert-error" ng-show="confirmNeeded">
+    <h4 class="alert-heading">Are you sure?</h4>
+    <div class="actions">
+      <a class="log-out-yes" ng-click="logOutConfirmed()">Yes</a>
+      <a class="log-out-no"  ng-click="logOutDiscarded()">No</a>
+    </div>
+  </div>
+  <ul class="dashboard-items">
+    <li class="daily-journal"><a href="#/daily_journal_entries">Daily Journal</a></li>
+    <li class="mood-trends"><a href="#/mood_trends">Mood Trends</a></li>
+    <li class="cheers"><a href="#/cheers">Cheers</a></li>
+    <li class="meditational-resources"><a href="#/meditational_resources/audio">Meditational Resources</a></li>
+    <li class="my-profile"><a href="#/profile">My Profile</a></li>
+    <li class="my-network"><a href="#/contacts">My Network</a></li>
+    <li class="self-help"><a href="#/content_objects">Self-help</a></li>
+    <li class="safety-plan"><a href="#/safety_plan">Safety Plan</a></li>
+    <li class="learn"><a href="#/learn">Learn</a></li>
+    <li class="help"><a href="#/help">Help</a></li>
+    <li class="questionnaire"><a href="#/depression_test">Depression Test</a></li>
+    <li class="chest-of-hope"><a href="#/chest_of_hope"><span>Chest of hope</span></a></li>
+  </ul>
+</section>

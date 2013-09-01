@@ -1,0 +1,38 @@
+<form>
+  <fieldset>
+    <div class="control-group">
+      <label class="control-label">Overall happiness</label>
+      <div class="controls">
+        <input overallhappiness ng-model="entry.happiness_level" id="question1" type="text"/>
+        <div class="slider-labels">
+          <div class="min-value">Sad</div>
+          <div class="max-value">Happy</div>
+        </div>
+      </div>
+    </div>
+    <measurablequestion2 question="entry"></measurablequestion2>
+    <div class="control-group">
+      <label class="control-label">Keywords</label>
+      <div class="alert alert-error" ng-show="errors.keywordError">
+        {{errors.keywordError}}
+      </div>
+      <mobilecheckbox value="entry.manic" title="Manic"></mobilecheckbox>
+      <mobilecheckbox value="entry.calm" title="Calm"></mobilecheckbox>
+      <mobilecheckbox value="entry.anxious" title="Anxious"></mobilecheckbox>
+      <mobilecheckbox value="entry.angry" title="Angry"></mobilecheckbox>
+    </fieldset>
+
+    <div class="control-group">
+      <label class="control-label">Name the day</label>
+      <div class="controls">
+        <input type="text" ng-model="entry.name"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Describe the day</label>
+      <div class="controls">
+        <textarea type="text" ng-model="entry.description"></textarea>
+      </div>
+    </div>
+  </fieldset>
+</form>

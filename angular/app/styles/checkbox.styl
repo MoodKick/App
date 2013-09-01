@@ -1,0 +1,126 @@
+@import 'nib'
+
+.ui-checkbox
+  position relative
+  clear both
+  margin .2em 0 .5em
+  z-index 1
+
+.ui-checkbox input
+  position absolute
+  left 20px
+  top 50%
+  width 10px
+  height 10px
+  margin -5px 0 0 0
+  outline 0 !important
+  z-index 1
+
+.ui-checkbox .ui-btn
+  margin 0
+  text-align left
+  z-index 2
+
+.ui-btn
+  display block
+  text-align center
+  cursor pointer
+  position relative
+  margin .5em 5px
+  padding 0
+
+.ui-corner-tl, .ui-corner-tr, .ui-corner-bl, .ui-corner-br, .ui-corner-top, .ui-corner-bottom, .ui-corner-right, .ui-corner-left, .ui-corner-all, .ui-btn-corner-tl, .ui-btn-corner-tr, .ui-btn-corner-bl, .ui-btn-corner-br, .ui-btn-corner-top, .ui-btn-corner-bottom, .ui-btn-corner-right, .ui-btn-corner-left, .ui-btn-corner-all
+  background-clip padding-box
+
+.ui-btn-corner-all
+  border-radius 1em
+
+.ui-btn-up-c, .ui-btn-hover-c, .ui-btn-down-c
+  font-family Helvetica, Arial, sans-serif
+  text-decoration none
+
+.ui-btn-up-c
+  border 1px solid #CCC
+  background #EEE
+  font-weight bold
+  color #222
+  text-shadow 0 1px 0 white
+  background-image linear-gradient(top, white, #F1F1F1)
+
+.ui-checkbox .ui-btn-icon-left .ui-btn-inner
+  padding-left 45px
+
+.ui-checkbox .ui-btn-inner
+  white-space normal
+
+.ui-btn-icon-left .ui-btn-inner
+  padding-left 40px
+
+.ui-btn-inner
+  padding .6em 20px
+  min-width .75em
+  display block
+  text-overflow ellipsis
+  overflow hidden
+  white-space nowrap
+  position relative
+  zoom 1
+
+.ui-btn-inner
+  border-top 1px solid white
+  border-color rgba(255, 255, 255, .3)
+
+.ui-btn-text
+  position relative
+  z-index 1
+  width 100%
+
+.ui-checkbox .ui-btn-icon-left .ui-icon
+  left 15px
+
+.ui-btn-icon-left .ui-btn-inner .ui-icon
+  position absolute
+  top 50%
+  margin-top -9px
+
+.ui-checkbox .ui-icon
+  top 1.1em
+
+.ui-btn-icon-left .ui-icon
+  left 10px
+
+.ui-checkbox .ui-icon
+  border-radius 3px
+
+.ui-icon
+  width 18px
+  height 18px
+
+.ui-icon-shadow
+  box-shadow 0px 1px 0 rgba(255, 255, 255, .4)
+
+.ui-icon, .ui-icon-searchfield::after
+  background #666
+  background rgba(0, 0, 0, .4)
+  background-image url(../images/checkbox.png)
+  background-repeat no-repeat
+  border-radius 9px
+
+.ui-checkbox input
+  position absolute
+  left 20px
+  top 50%
+  width 10px
+  height 10px
+  margin -5px 0 0 0
+  outline 0 !important
+  z-index 1
+
+.ui-icon-checkbox-on
+  background-position -648px 50%
+
+.ui-icon-checkbox-off
+  background-position -684px 50%
+
+.ui-icon-checkbox-off
+  background-color transparent
