@@ -1,7 +1,7 @@
-MoodKick Mobile Client
+MoodKick App
 ======
 
-The Moodkick Mobile Client is an app that users use on their smartphones to interact with the MoodKick Server Backend.
+The Moodkick App is an app that users use on their smartphones to interact with the MoodKick Server Backend.
 
 _A more in-depth description is to be developed._
 
