@@ -25,7 +25,6 @@ exports.config =
           'vendor/scripts/angular/angular-cookies.js'
         ],
         after: [
-          'app/js/app.js',
           'vendor/scripts/content-object-player.js'
           'vendor/scripts/audio.js'
         ]
